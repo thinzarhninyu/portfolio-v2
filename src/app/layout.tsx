@@ -3,6 +3,8 @@ import { Outfit } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header/header'
 import Head from 'next/head'
+import { ThemeProvider } from "@/components/theme-provider"
+import ThemeToggle from '@/components/theme-toggle'
 
 const outfit = Outfit({
   weight: '400',
@@ -27,10 +29,22 @@ export default function RootLayout({
         <link rel="icon" href="/logo.jpg" />
       </Head>
       <body className={outfit.className}>
-        <header className='top-0 sticky z-50'>
-          <Header />
-        </header>
-        <main className='h-full py-10'>{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className='top-0 sticky z-50'>
+            <Header />
+          </header>
+          <main className='h-full py-10'>
+            {children}
+            <div className='bottom-5 left-0 p-4 fixed'>
+              <ThemeToggle />
+            </div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

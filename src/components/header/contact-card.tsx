@@ -18,9 +18,9 @@ const ContactCard = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <p className="hover:cursor-pointer rounded-lg hover:bg-gray-100 p-1.5">Contact</p>
+                <p className="hover:cursor-pointer rounded-lg hover:bg-gray-100 hover:dark:bg-gray-700 p-1.5">Contact</p>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white flex flex-row w-fit me-5 mt-5">
+            <DropdownMenuContent className="bg-white dark:bg-black flex flex-row w-fit me-5 mt-5">
                 <DropdownMenuItem>
                     <a href="https://www.linkedin.com/in/thinzarhninyu/">
                         <BiLogoLinkedinSquare className="text-2xl hover:decoration-white" />

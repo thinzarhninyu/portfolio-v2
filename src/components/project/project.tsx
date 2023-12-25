@@ -17,7 +17,6 @@ const Project = ({
     project: ProjectType
 }) => {
     return (
-        // <Link href={project.link!}>
         <Card className='w-full h-full flex flex-row justify-between shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.010]'>
             <div className='w-full lg:w-25'>
                 <Image
@@ -62,7 +61,6 @@ const Project = ({
                 </div>
             </div>
         </Card>
-        // </Link>
     )
 }
 

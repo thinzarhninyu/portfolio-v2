@@ -2,7 +2,6 @@ import { tags } from '@/data/data'
 import Link from 'next/link';
 import { AiFillFilePdf } from "react-icons/ai";
 import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
 import ImageCarousel from '@/components/image/image-carousel';
 import { carouselImages } from '@/data/data';
 
@@ -31,10 +30,9 @@ const Introduction = () => {
                         <div className='mt-5 w-full flex justify-center'>
                             <Link
                                 href="/cv/resume.pdf"
-                                className={`${buttonVariants({ variant: "secondary" })} flex flex-row justify-center items-center px-4 py-2 text-sm font-semibold rounded-lg shadow-md bg-white mt-5 hover:bg-gray-100 hover:underline focus:ring-black`}
-                            >
+                                className="mt-4 inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700">
                                 <AiFillFilePdf className='mr-2' />
-                                <p>View CV</p>
+                                View CV
                             </Link>
                         </div>
 
