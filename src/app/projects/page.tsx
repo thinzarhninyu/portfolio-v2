@@ -24,9 +24,9 @@ export default function Projects() {
                 <Divider />
             </div>
 
-            <main className="flex flex-col items-center justify-center min-h-screen pb-20 w-[90%] mx-auto mt-5">
+            <main className="flex flex-col items-center justify-center min-h-screen pb-20 w-[90%] mx-auto mt-3">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-0">
                     {projects.map((project, idx) => (
                         <Project key={project.id} project={project} idx={idx} />
                     ))}
