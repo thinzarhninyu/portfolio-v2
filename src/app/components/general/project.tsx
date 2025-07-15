@@ -1,6 +1,6 @@
 export default function Project({ project, idx }: { project: any, idx: number }) {
     return (
-        <div className="relative w-full h-72 overflow-hidden rounded-lg transition-all transform group  hover:border-[#5465FF] hover:shadow-[0_4px_10px_rgba(84,101,255,0.4)]">
+        <div className="relative w-full aspect-video min-h-72 overflow-hidden rounded-lg transition-all transform group  hover:border-[#5465FF] hover:shadow-[0_4px_10px_rgba(84,101,255,0.4)]">
             <img
                 src={project.image}
                 alt={project.title}
