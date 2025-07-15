@@ -14,7 +14,7 @@ export const navigation = [
     },
     {
         name: "Experience",
-        href: "#experience",
+        href: "#work",
     },
 ];
 
