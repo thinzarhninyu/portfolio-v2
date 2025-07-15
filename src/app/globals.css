@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --grey-gradient: linear-gradient(to bottom, #ffffff, #999999);
+}
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  /* --color-primary-accent: #E040FB;
+  --color-secondary-accent: #00FF99;
+  --color-hover-accent: #C020D0;
+  --color-secondary-font: #e0e0e0; */
+
+  /* --color-primary-accent: #6018dc; */
+  /* --color-hover-accent: #4300A3; */
+
+  /* --color-secondary-accent: #3e3d39;
+  --color-secondary-font: #3e3d39;
+  --color-primary-accent: #4e21c0;
+  --color-hover-accent: #6F73E0; */
+
+  --color-secondary-accent: #fdb60b;
+  --color-secondary-text: #010003;
+  --color-primary-text: #000000;
+  --color-primary-accent: #497184; 
+  --color-hover-accent: #011588;
+  --color-background: #6699ff;
+
+  /* --font-title: var(--font-title); */
+  /* --font-title: var(--font-nunito-sans); */
+
+  --font-urbanist: var(--font-urbanist);
+  --font-goldman: var(--font-goldman);
+  --font-didact-gothic: var(--font-didact-gothic);
+  --font-rubik: var(--font-rubik);
+  --font-raleway: var(--font-raleway);
+  --font-cabin: var(--font-cabin);
+  --font-nunito-sans: var(--font-nunito-sans);
+  --font-limelight: var(--font-limelight);
+  --font-dm-serif-display: var(--font-dm-serif-display);
+  --font-outfit: var(--font-outfit);
+
+  /* --font-title: var(--font-quicksand); */
+  --font-title: var(--font-lexend-deca);
+  --font-lexend-deca: var(--font-lexend-deca);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: url('/general/paw-print.svg') 6 6, auto;
+}
+
+.grey-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(153, 153, 153, 0.05) 100%);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #E040FB;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #c070d2;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #E040FB transparent;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
