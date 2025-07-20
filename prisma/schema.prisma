@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model WorkExp {
+  id       String  @id @default(cuid())
+  company  String
+  position Content @relation(fields: [contentId], references: [id])
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  contentId   String
+}
+
+model Client {
+  id          String    @id @default(cuid())
+  name        String
+  logo        String
+  description Content?  @relation(fields: [contentId], references: [id])
+  website     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  Project     Project[]
+  contentId   String?
+}
+
+enum Category {
+  LANGUAGE
+  FRAMEWORK
+  DATABASE
+  TOOL
+  PLATFORM
+  OTHER
+}
+
+model TechStack {
+  id          String   @id @default(cuid())
+  name        String
+  icon        String
+  category    Category
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Project     Project? @relation(fields: [projectId], references: [id])
+  projectId   String?
+}
+
+model Project {
+  id           String      @id @unique
+  name         String
+  description  Content     @relation(fields: [contentId], references: [id])
+  image        String
+  featured     Boolean     @default(false)
+  client       Client?     @relation(fields: [clientId], references: [id])
+  techStack    TechStack[]
+  year         Int
+  link         String?
+  externalLink String?
+  type         ProjectType @default(PERSONAL)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  contentId    String
+  clientId     String?
+}
+
+enum ProjectType {
+  PERSONAL
+  CLIENT
+}
+
+model Content {
+  id          String    @id @default(cuid())
+  title       String?
+  description String?
+  language    Language
+  content     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  Project     Project[]
+  Client      Client[]
+  WorkExp     WorkExp[]
+}
+
+enum Language {
+  ENGLISH
+  SPANISH
+  FRENCH
+  GERMAN
+}

@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`no-scrollbar bg-[#051923] antialiased custom-scrollbar ${lexendDeca.variable}`}
       >
         <LanguageProvider>
-          <header className="fixed top-0 left-0 w-full z-[100] bg-[#051923]/80 backdrop-blur-md">
+          <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md">
             <Navbar />
           </header>
           <main className="">

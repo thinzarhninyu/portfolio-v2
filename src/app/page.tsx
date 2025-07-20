@@ -8,8 +8,10 @@ import Clients from "./components/clients";
 import Projects from "./components/projects";
 import TechStack from "./components/techstack";
 import Footer from "./components/general/footer";
+import { LanguageCode } from "./lib/types";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <main className="flex flex-col items-center justify-start w-full bg-[#051923]/80 overflow-x-hidden pt-10">
       <Hero />

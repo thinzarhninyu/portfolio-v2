@@ -1,4 +1,26 @@
-export const projects = [
+
+// types enum
+export enum ProjectType {
+  careerFair = "Career Fair",
+  marketingCampaign = "Marketing Campaign",
+  digitalInitiative = "Digital Initiative",
+  careerQuiz = "Career Quiz",
+  interactiveExhibit = "Interactive Exhibit",
+  all = "All",
+}
+
+export const projects: {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  featured: boolean;
+  client: string;
+  year: number;
+  link: string;
+  externalLink?: string;
+  tags: ProjectType[];
+}[] = [
   {
     id: 'ica-heritage-exhibit',
     title: "ICA Heritage Exhibit",
@@ -7,7 +29,9 @@ export const projects = [
     featured: true,
     client: "Immigration & Checkpoint Authority",
     year: 2025,
-    link: "/projects/ica-heritage-exhibit",
+    link: "/projects/ica-heritage-exhibit", 
+    externalLink: "https://www.ica.gov.sg/heritage-exhibit",
+    tags: [ProjectType.interactiveExhibit]
   },
   {
     id: 'nus-career-fest-2025',
@@ -18,6 +42,8 @@ export const projects = [
     client: "National University of Singapore",
     year: 2025,
     link: "/projects/nus-career-fest-2025",
+    externalLink: "https://careerfest.nus.edu.sg",
+    tags: [ProjectType.careerFair]
   },
   {
     id: 'pico-career-fair-2025',
@@ -28,6 +54,8 @@ export const projects = [
     client: "WorldSkills Singapore",
     year: 2025,
     link: "/projects/pico-career-fair-2025",
+    externalLink: "https://worldskills.sg/career-fair-2025",
+    tags: [ProjectType.careerFair]
   },
   {
     id: 'coca-cola-shareacoke',
@@ -38,6 +66,8 @@ export const projects = [
     client: "Coca Cola",
     year: 2025,
     link: "/projects/coca-cola-shareacoke",
+    externalLink: "https://www.coca-cola.com/shareacoke",
+    tags: [ProjectType.marketingCampaign]
   },
   {
     id: 'mti-career-quiz',
@@ -48,6 +78,8 @@ export const projects = [
     client: "Ministry of Trade & Industry Singapore",
     year: 2024,
     link: "/projects/mti-career-quiz",
+    externalLink: "https://www.mti.gov.sg/career-quiz",
+    tags: [ProjectType.careerQuiz]
   },
   {
     id: 'singtel-digital-for-life-2024',
@@ -58,5 +90,7 @@ export const projects = [
     client: "Singtel",
     year: 2024,
     link: "/projects/singtel-digital-for-life-2024",
+    externalLink: "https://www.singtel.com/digital-for-life",
+    tags: [ProjectType.digitalInitiative]
   }
 ];

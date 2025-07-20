@@ -14,7 +14,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-[#9affcc] transition-colors"
           >
-            <Github className="w-6 h-6" />
+            <Github className="w-4 md:w-6 h-4 md:h-6" />
           </a>
           <a
             href="https://www.linkedin.com/in/yourusername"
@@ -22,19 +22,19 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-[#9affcc] transition-colors"
           >
-            <Linkedin className="w-6 h-6" />
+            <Linkedin className="w-4 md:w-6 h-4 md:h-6" />
           </a>
           <a
             href="mailto:youremail@example.com"
             className="hover:text-[#9affcc] transition-colors"
           >
-            <Mail className="w-6 h-6" />
+            <Mail className="w-4 md:w-6 h-4 md:h-6" />
           </a>
           <a
             href="/telegram"
             className="hover:text-[#9affcc] transition-colors"
           >
-            <Send className="w-6 h-6" />
+            <Send className="w-4 md:w-6 h-4 md:h-6"  />
           </a>
         </div>
 

@@ -26,19 +26,19 @@ export default function LanguageToggle() {
     }, []);
 
     return (
-        <div className="fixed top-10 right-10 z-50 w-auto h-auto font-goldman" ref={containerRef}>
+        <div className="absolute w-auto h-auto bg-white top-4 right-0 px-3 rounded-l-lg" ref={containerRef}>
             <button
                 onClick={() => setOpen((prev) => !prev)}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-secondary-accent hover:bg-secondary-accent/90 shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 py-2 rounded-full bg-secondary-accent hover:bg-secondary-accent/90 cursor-pointer"
             >
                 <Flag
                     code={currentLang.countryCode}
-                    style={{ width: 24, height: 16, borderRadius: 3 }}
+                    style={{ width: 16, height: 12, borderRadius: 0 }}
                 />
-                <span className="uppercase text-sm font-manrope text-[#0d0d0d] font-bold">
+                <span className="uppercase text-xs font-lexend-deca text-[#090909] font-normal tracking-tight">
                     {currentLang.code}
                 </span>
-                <ChevronDown className="w-4 h-4 text-[#0d0d0d]" />
+                <ChevronDown className="w-3 h-3 text-[#090909]" />
             </button>
 
             <AnimatePresence>
@@ -48,16 +48,17 @@ export default function LanguageToggle() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -5 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute mt-2 right-3 w-20 bg-secondary-font rounded-md font-bold"
+                        className="absolute mt-2 right-1 w-20 bg-white rounded-md shadow-md z-50"
                     >
                         <ul className="py-2">
                             {languages.map((lang) => (
                                 <li key={lang.code}>
                                     <button
-                                        className={`uppercase flex items-center justify-center gap-2 w-full px-4 py-2 text-center text-sm hover:bg-white text-[#0d0d0d] hover:text-hover-accent`}
+                                        className={`uppercase flex items-center justify-center gap-2 w-full px-4 py-2 text-center text-xs hover:bg-white text-[#090909] hover:text-hover-accent`}
                                         onClick={() => {
                                             setCurrentLang(lang);
                                             setOpen(false);
+                                            document.cookie = `lang=${lang.code}; path=/; max-age=31536000`; // 1 year
                                         }}
                                     >
                                         <Flag
@@ -74,4 +75,5 @@ export default function LanguageToggle() {
             </AnimatePresence>
         </div>
     );
+
 }

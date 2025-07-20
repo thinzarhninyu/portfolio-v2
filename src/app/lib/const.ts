@@ -5,18 +5,21 @@ export const name = "Thinzar Hnin Yu";
 
 export const navigation = [
     {
-        name: "About",
-        href: "#about",
+        name: "Clients",
+        href: "/#clients",
     },
     {
         name: "Projects",
-        href: "#projects",
+        href: "/#projects",
     },
     {
         name: "Experience",
-        href: "#work",
+        href: "/#work",
     },
 ];
+
+export const SUPPORTED_LANGUAGES = ["en", "es", "fr", "de"] as const;
+// export type LanguageCode = typeof SUPPORTED_LANGUAGES[number];
 
 export const languages: {
     code: LanguageCode;
@@ -36,7 +39,7 @@ export const intro: {
 }[] = [
         {
             icon: Laptop,
-            title: "Developer",
+            title: "Coder",
             description: "Building user-friendly, modern web experiences.",
         },
         {

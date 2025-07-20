@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center gap-10 text-center w-full relative overflow-hidden bg-[#f6f4f0] px-4 border-t-2"
+      className="min-h-screen flex flex-col items-center justify-center gap-10 text-center w-full relative overflow-hidden bg-[#f6f4f0] px-7 border-t-2"
     >
       <div className="flex flex-col items-center justify-center max-w-2xl w-full gap-y-6">
         <p className="font-title text-3xl md:text-5xl font-bold tracking-tighter text-[#080808] leading-tight">
@@ -13,12 +13,12 @@ export default function Contact() {
 
         <Divider />
 
-        <p className="text-base md:text-lg leading-relaxed text-[#090909] font-lexend-deca font-light tracking-tight">
+        <p className="text-sm md:text-lg leading-relaxed text-[#090909] font-lexend-deca font-light tracking-tight px-5">
           If you have any questions or would like to get in touch, <span className="bg-[#9affcc] rounded-lg px-2 py-0.5 leading-none">feel free to reach out!</span>
         </p>
       </div>
 
-      <form className="flex flex-col gap-4 w-full max-w-2xl mx-auto px-4 justify-center items-center text-[#080808] font-lexend-deca font-light tracking-tight">
+      <form className="flex flex-col gap-4 w-full max-w-2xl mx-auto px-4 justify-center items-center text-[#080808] font-lexend-deca font-light tracking-tight text-sm md:text-base">
         <input
           type="text"
           placeholder="Your Name"
@@ -36,7 +36,7 @@ export default function Contact() {
         
         <button
           type="submit"
-          className="w-fit mt-2 px-5 py-3 bg-[#5465FF] text-white rounded-full hover:bg-[#5465FF]/90 transition transform hover:-translate-y-0.5 text-lg font-lexend-deca uppercase tracking-tight"
+          className="w-fit mt-2 px-5 py-3 bg-[#5465FF] text-white rounded-full hover:bg-[#5465FF]/90 transition transform hover:-translate-y-0.5 text-xs md:text-lg font-lexend-deca uppercase tracking-tight"
         >
           Send Message
         </button>

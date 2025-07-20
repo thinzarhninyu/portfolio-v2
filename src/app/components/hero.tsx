@@ -1,27 +1,32 @@
-"use client";
+// "use client";
 
 import { ArrowDown, ArrowDownToLine, ChevronsDown, Download } from "lucide-react";
 import Divider from "./general/divider";
 import Button from "./general/button";
+import { getHero } from "../lib/data";
+import { LanguageCode } from "../lib/types";
 
-export default function Hero() {
+export default async function Hero() {
+
+    const hero = await getHero("en"); // Replace "en" with the desired language code
+
     return (
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f6f4f0]">
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f6f4f0] px-7">
             <div className="mx-auto flex flex-col items-center text-center gap-8">
                 <h1 className="font-title text-3xl md:text-5xl font-bold tracking-tighter text-[#080808] leading-tight max-w-2xl">
                     Hello, I'm Thinzar, <br />a <span className="bg-[#9affcc] rounded-lg px-2 py-0.5 leading-none">developer</span> and <span className="bg-[#ffcb98] rounded-lg px-2 py-0.5 leading-none">designer</span>.
                 </h1>
 
-                <p className="max-w-2xl text-base md:text-lg leading-relaxed text-[#090909] font-lexend-deca font-light tracking-tight">
-                    I'm a Computer Science freshman at NUS with a background in IT from Singapore Polytechnic. I love exploring new ideas, working with people to solve problems, and turning concepts into clean, user-friendly products that make everyday life easier.
+                <p className="max-w-2xl md:px-0 text-sm md:text-lg leading-relaxed text-[#090909] font-lexend-deca font-light tracking-tight">
+                    {hero?.content}
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex flex-col md:flex-row justify-center gap-3">
                     <Button href="#projects" text="Browse Work" type="primary" />
                     <Button href="#contact" text="Contact Me" type="secondary" />
                 </div>
 
-                <a target="_blank" href="/resume/thinzar-hnin-yu-resume.pdf" className="mt-4 flex items-center justify-center gap-1 text-[#090909] hover:text-[#5465FF] font-lexend-deca font-normal text-base border-b transition-all transform hover:-translate-y-0.5">
+                <a target="_blank" href="/resume/thinzar-hnin-yu-resume.pdf" className="mt-0 md:mt-4 flex items-center justify-center gap-1 text-[#090909] hover:text-[#5465FF] font-lexend-deca font-normal text-xs md:text-base border-b transition-all transform hover:-translate-y-0.5">
                     <ArrowDown className="w-4 h-4" />
                     <span>View Resume</span>
                 </a>

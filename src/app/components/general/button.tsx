@@ -18,7 +18,7 @@ export default function Button({
     Icon,
 }: ButtonProps) {
     const baseClasses =
-        "px-5 py-2 rounded-full  transition-all transform hover:-translate-y-0.5 tracking-normal flex flex-row items-center justify-center gap-2 font-lexend-deca font-normal text-lg uppercase tracking-tighter";
+        "px-5 py-2 rounded-full  transition-all transform hover:-translate-y-0.5 tracking-normal flex flex-row items-center justify-center gap-2 font-lexend-deca font-normal text-xs md:text-lg uppercase tracking-tighter";
 
     const primaryClasses =
         "bg-[#5465FF] text-[#ffffff] hover:bg-[#5465FF]/90";

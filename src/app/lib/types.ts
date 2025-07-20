@@ -1,4 +1,11 @@
-export type LanguageCode = "en" | "es" | "de" | "fr";
+export const LanguageMap = {
+  en: "ENGLISH",
+  es: "SPANISH",
+  de: "GERMAN",
+  fr: "FRENCH",
+} as const;
+
+export type LanguageCode = keyof typeof LanguageMap;
 
 export type WorkExp = {
   company: string;
