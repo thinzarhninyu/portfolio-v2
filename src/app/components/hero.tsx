@@ -3,12 +3,10 @@
 import { ArrowDown, ArrowDownToLine, ChevronsDown, Download } from "lucide-react";
 import Divider from "./general/divider";
 import Button from "./general/button";
-import { getHero } from "../lib/data";
 import { LanguageCode } from "../lib/types";
 
 export default async function Hero() {
 
-    const hero = await getHero("en"); // Replace "en" with the desired language code
 
     return (
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f6f4f0] px-7">
@@ -18,7 +16,8 @@ export default async function Hero() {
                 </h1>
 
                 <p className="max-w-2xl md:px-0 text-sm md:text-lg leading-relaxed text-[#090909] font-lexend-deca font-light tracking-tight">
-                    {hero?.content}
+                    {/* {hero?.content} */}
+                    I'm a Computer Science freshman at NUS with a background in IT from Singapore Polytechnic. I love exploring new ideas, working with people to solve problems, and turning concepts into clean, user-friendly products that make everyday life easier.
                 </p>
 
                 <div className="flex flex-col md:flex-row justify-center gap-3">
